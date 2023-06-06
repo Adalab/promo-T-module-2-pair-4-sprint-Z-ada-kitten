@@ -123,12 +123,17 @@ function cancelNewKitten(event) {
 function filterKitten(event) {
   event.preventDefault();
   const descrSearchText = input_search_desc.value;
-  listElement.innerHTML = '';
+  const filterFilters = kittenDataList.filter((kittenItem) =>
+    kittenItem.desc.includes(descrSearchText)
+  );
+  renderKittenList(filterFilters);
+
+  /*listElement.innerHTML = '';
   for (const kittenItem of kittenDataList) {
     if (kittenItem.desc.includes(descrSearchText)) {
       listElement.innerHTML += renderKitten(kittenItem);
     }
-  }
+  }*/
 }
 
 //Mostrar el litado de gatitos en ell HTML
@@ -139,3 +144,12 @@ linkNewFormElememt.addEventListener('click', handleClickNewCatForm);
 searchButton.addEventListener('click', filterKitten);
 buttonAdd.addEventListener('click', addNewKitten);
 buttonCancelForm.addEventListener('click', cancelNewKitten);
+
+// RECEBIR DATOS DEL SERVIDOR
+
+/*fetch('DIRECCIÓN')
+  .then((Response) => Response.json)
+  .then((data) => {
+    //el dódigo que usa data.
+  });
+/*el parametro es obligatorio, y se puede poner cualquer nombre.*/
