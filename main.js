@@ -1,5 +1,7 @@
 'use strict';
 
+//localStorage.setItem('variableDesdeJs', 'contenido de la vari');
+
 /* Elementos que usamos en el HTML */
 const newFormElement = document.querySelector('.js-new-form');
 const listElement = document.querySelector('.js-list');
@@ -153,3 +155,5 @@ buttonCancelForm.addEventListener('click', cancelNewKitten);
     //el dódigo que usa data.
   });
 /*el parametro es obligatorio, y se puede poner cualquer nombre.*/
+//LOCAL STORAGE
+localStorage.setItem('titledeLaUser', value);
